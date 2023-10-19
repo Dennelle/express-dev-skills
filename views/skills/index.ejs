@@ -7,13 +7,22 @@
 </head>
 <body>
     <h1>Developer Skills</h1>
-    <a href ='/skills'>Dev Skills List</a>
+    //added /new to match Jim
+    <a href='/skills/new'>Dev Skills List</a>
     <ul>
         <% skills.forEach(function(t) { %>
             <li>
+
               <a href="/skills/<%= t.id %>"><%= t.skills %></a>
             -
-          <%= t.skills ? 'done' : 'not done' %>
+            // added t.done to match Jim
+          <%= t.done ? 'done' : 'not done' %>
+
+          <form action="/skills/<%= t.id %>?_method=DELETE"
+            class="delete-form" method="POST">
+            <button type="submit">X</button>
+          </form>
+
         </li>
       <% }); %>
     </ul>

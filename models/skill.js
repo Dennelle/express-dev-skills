@@ -28,3 +28,24 @@ const skills = [
     // ideal for finding objects within an array
     return skills.find(skills => skills.id === id);
   }
+
+  function update(id, skillUpdate){
+    const idx = skills.findIndex(todo => todo.id === parseInt(id));
+    let skill = skills[idx];
+    todo = {
+        ...skill,
+    }
+  }
+
+  function deleteOne(id) {
+    const idx = todos.findIndex(skill => skill.id === parseInt(id));
+    skills.splice(idx, 1);
+    console.log(skills)
+  }
+
+  function create(skill) {
+    skill.todo = date.now() % 1000000;
+    skill.done = false;
+    skill.push(skill);
+    return skill
+  }
