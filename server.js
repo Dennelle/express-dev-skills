@@ -1,5 +1,7 @@
 var createError = require('http-errors');
 const express = require('express'); //load express
+const router = express.Router(); //mount the router object in the request pipeline
+
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -7,8 +9,11 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var skillsRouter = require('./routes/skills');
 
+module.exports = router;
+
 const app = express(); //create express app
-const router = express.Router(); //mount the router object in the request pipeline
+
+module.exports = app;
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -38,5 +43,3 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-module.exports = app;

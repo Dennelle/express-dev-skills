@@ -12,4 +12,4 @@ const skillsCtrl = require('../controllers/skills');
 router.get('/', skillsCtrl.index);
 router.get('/:id', skillsCtrl.show);
 
-route.get('/skills/:id', skillsCtrl.getOne());
+
